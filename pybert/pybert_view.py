@@ -173,7 +173,7 @@ class MyHandler(Handler):
                         (ix, prefix) = (0, "chnl")
                         item_name = prefix + "_" + suffix + "_ref"
                         container[ix].plot(
-                            ("f_GHz", item_name), type="line", color="darkcyan", name="Inc_ref", index_scale="log"
+                            ("f_GHz", item_name), type="line", color="darkcyan", name="Inc_ref", index_scale="linear"
                         )
                         for (ix, prefix) in [(1, "tx"), (2, "ctle"), (3, "dfe")]:
                             item_name = prefix + "_out_" + suffix + "_ref"
@@ -182,7 +182,7 @@ class MyHandler(Handler):
                                 type="line",
                                 color="darkmagenta",
                                 name="Cum_ref",
-                                index_scale="log",
+                                index_scale="linear",
                             )
                         if has_both:
                             for (ix, prefix) in [(1, "tx"), (2, "ctle"), (3, "dfe")]:
@@ -192,7 +192,7 @@ class MyHandler(Handler):
                                     type="line",
                                     color="darkcyan",
                                     name="Inc_ref",
-                                    index_scale="log",
+                                    index_scale="linear",
                                 )
 
             except Exception as err:
