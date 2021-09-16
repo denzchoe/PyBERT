@@ -1,6 +1,6 @@
 """
 Plot definitions for PyBERT class.
-
+freq
 Original author: David Banas <capn.freako@gmail.com>
 
 Original date:   February 21, 2015 (Copied from pybert.py, as part of a major code cleanup.)
@@ -218,8 +218,8 @@ def make_plots(self, n_dfe_taps):
 
     # - Frequency Responses tab
     plot_H_chnl = Plot(plotdata, padding_left=75)
-    plot_H_chnl.plot(("f_GHz", "chnl_H"), type="line", color="blue", name="Original Impulse", index_scale="log")
-    plot_H_chnl.plot(("f_GHz", "chnl_trimmed_H"), type="line", color="red", name="Trimmed Impulse", index_scale="log")
+    plot_H_chnl.plot(("f_GHz", "chnl_H"), type="line", color="blue", name="Original Impulse", index_scale="linear")
+    plot_H_chnl.plot(("f_GHz", "chnl_trimmed_H"), type="line", color="red", name="Trimmed Impulse", index_scale="linear")
     plot_H_chnl.title = post_chnl_str
     plot_H_chnl.index_axis.title = "Frequency (GHz)"
     plot_H_chnl.y_axis.title = "Frequency Response (dB)"
@@ -229,8 +229,8 @@ def make_plots(self, n_dfe_taps):
     plot_H_chnl.legend.align = "ll"
 
     plot_H_tx = Plot(plotdata, padding_left=75)
-    plot_H_tx.plot(("f_GHz", "tx_H"), type="line", color="blue", name="Incremental", index_scale="log")
-    plot_H_tx.plot(("f_GHz", "tx_out_H"), type="line", color="red", name="Cumulative", index_scale="log")
+    plot_H_tx.plot(("f_GHz", "tx_H"), type="line", color="blue", name="Incremental", index_scale="linear")
+    plot_H_tx.plot(("f_GHz", "tx_out_H"), type="line", color="red", name="Cumulative", index_scale="linear")
     plot_H_tx.title = post_tx_str
     plot_H_tx.index_axis.title = "Frequency (GHz)"
     plot_H_tx.y_axis.title = "Frequency Response (dB)"
@@ -240,8 +240,8 @@ def make_plots(self, n_dfe_taps):
     plot_H_tx.legend.align = "ll"
 
     plot_H_ctle = Plot(plotdata, padding_left=75)
-    plot_H_ctle.plot(("f_GHz", "ctle_H"), type="line", color="blue", name="Incremental", index_scale="log")
-    plot_H_ctle.plot(("f_GHz", "ctle_out_H"), type="line", color="red", name="Cumulative", index_scale="log")
+    plot_H_ctle.plot(("f_GHz", "ctle_H"), type="line", color="blue", name="Incremental", index_scale="linear")
+    plot_H_ctle.plot(("f_GHz", "ctle_out_H"), type="line", color="red", name="Cumulative", index_scale="linear")
     plot_H_ctle.title = post_ctle_str
     plot_H_ctle.index_axis.title = "Frequency (GHz)"
     plot_H_ctle.y_axis.title = "Frequency Response (dB)"
@@ -255,8 +255,8 @@ def make_plots(self, n_dfe_taps):
     plot_H_tx.value_range = plot_H_ctle.value_range
 
     plot_H_dfe = Plot(plotdata, padding_left=75)
-    plot_H_dfe.plot(("f_GHz", "dfe_H"), type="line", color="blue", name="Incremental", index_scale="log")
-    plot_H_dfe.plot(("f_GHz", "dfe_out_H"), type="line", color="red", name="Cumulative", index_scale="log")
+    plot_H_dfe.plot(("f_GHz", "dfe_H"), type="line", color="blue", name="Incremental", index_scale="linear")
+    plot_H_dfe.plot(("f_GHz", "dfe_out_H"), type="line", color="red", name="Cumulative", index_scale="linear")
     plot_H_dfe.title = post_dfe_str
     plot_H_dfe.index_axis.title = "Frequency (GHz)"
     plot_H_dfe.y_axis.title = "Frequency Response (dB)"
