@@ -1605,8 +1605,8 @@ class PyBERT(HasTraits):
             f2, H2 = add_ondie_s(H2, fname, Zref, Zref, f)
         # chnl_H  = 2.0 * calc_G(H,  Rs, Cs, np.interp(f,  f, Zc), RL, Cp, CL, f*2*pi)   # Compensating for nominal /2 divider action.
         # chnl_H2 = 2.0 * calc_G(H2, Rs, Cs, np.interp(f2, f, Zc), RL, Cp, CL, f2*2*pi)  # Compensating for nominal /2 divider action.
-        chnl_H  = 2.0 * calc_G(H,  Rs, Cs, Zref, RL, Cp, CL, f*2*pi)   # Compensating for nominal /2 divider action.
-        chnl_H2 = 2.0 * calc_G(H2, Rs, Cs, Zref, RL, Cp, CL, f2*2*pi)  # Compensating for nominal /2 divider action.
+        chnl_H  = 2.0 * calc_G(H[:len(f)],  Rs, Cs, Zref, RL, Cp, CL, f*2*pi)   # Compensating for nominal /2 divider action.
+        chnl_H2 = 2.0 * calc_G(H2[:len(f)], Rs, Cs, Zref, RL, Cp, CL, f2*2*pi)  # Compensating for nominal /2 divider action.
         # plt.semilogx(f*1e-9,  20*np.log10(np.abs(chnl_H)),  label='Before On-die S-params.')
         # plt.semilogx(f2*1e-9, 20*np.log10(np.abs(chnl_H2)), label='After On-die S-params.')
         chnl_h2 = irfft(chnl_H2)
