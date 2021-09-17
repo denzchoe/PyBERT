@@ -373,7 +373,7 @@ class PyBERT(HasTraits):
     # Independent variables
 
     # - Simulation Control
-    bit_rate = Range(low=0.1, high=120.0, value=gBitRate)     #: (Gbps)
+    bit_rate = Range(low=0.1, high=600.0, value=gBitRate)     #: (Gbps)
     nbits = Range(low=1000, high=10000000, value=gNbits)      #: Number of bits to simulate.
     pattern_len = Range(low=7, high=10000000, value=gPatLen)  #: PRBS pattern length.
     nspb = Range(low=2, high=256, value=gNspb)                #: Signal vector samples per bit.
